@@ -1,0 +1,9 @@
+CREATE TABLE users (
+  id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  github_handle TEXT NOT NULL UNIQUE,
+  slack_user_id TEXT,
+  current_streak INT DEFAULT 0,
+  last_commit_date DATE,
+  is_active BOOLEAN DEFAULT true,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
